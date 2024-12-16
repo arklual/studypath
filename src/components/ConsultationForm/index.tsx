@@ -14,7 +14,7 @@ export function ConsultationForm() {
           Мы свяжемся с вами в ближайшее время для уточнения деталей.
         </p>
         <a
-          href="https://rutube.ru/video/4481c5e861a22c5e2369a8ca10fd40c0"
+          href="https://rutube.ru/video/5b8160fb29edfb3b8043f0e462671d44"
           className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors"
         >
           Посмотреть демо-версию

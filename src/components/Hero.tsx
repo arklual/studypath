@@ -20,7 +20,7 @@ export function Hero() {
           <div className="flex justify-center space-x-4">
             <a
               href={
-                'https://rutube.ru/video/4481c5e861a22c5e2369a8ca10fd40c0/#start_' +
+                'https://forms.gle/9L7CnhCFdK7HbbTRA/#start_' +
                 utm_campaign +
                 '_' +
                 utm_medium +
