@@ -20,9 +20,7 @@ export function CompetencyTree() {
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             {currentSpec.title}
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Ваш путь обучения
-          </p>
+          <p className="text-xl text-gray-600 mb-8">Ваш путь обучения</p>
         </div>
 
         <div className="space-y-8">

@@ -36,8 +36,9 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Контакты</h3>
             <ul className="space-y-2 text-gray-400">
-              <li>Email: aralklushin@edu.hse.ru</li>
-              <li>Telegram: @arklual</li>
+              <li>Email: info@studypath.ru</li>
+              <li>Telegram: @studypath</li>
+              <li>VK: studypath</li>
             </ul>
           </div>
         </div>

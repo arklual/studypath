@@ -17,8 +17,8 @@ export function Canvas({ subjects, selectedSubject, onSelectSubject }: Props) {
 
     const level = subject.prerequisites.length;
     const siblingIndex = subjects
-      .filter(s => s.prerequisites.length === level)
-      .findIndex(s => s.id === subject.id);
+      .filter((s) => s.prerequisites.length === level)
+      .findIndex((s) => s.id === subject.id);
 
     return {
       x: baseX + level * levelSpacing,
@@ -28,9 +28,9 @@ export function Canvas({ subjects, selectedSubject, onSelectSubject }: Props) {
 
   // Draw connection lines between nodes
   const renderConnections = () => {
-    return subjects.map(subject => {
-      return subject.prerequisites.map(preReqId => {
-        const preReqSubject = subjects.find(s => s.id === preReqId);
+    return subjects.map((subject) => {
+      return subject.prerequisites.map((preReqId) => {
+        const preReqSubject = subjects.find((s) => s.id === preReqId);
         if (!preReqSubject) return null;
 
         const start = getNodePosition(preReqSubject);
@@ -73,7 +73,10 @@ export function Canvas({ subjects, selectedSubject, onSelectSubject }: Props) {
       >
         {renderConnections()}
       </svg>
-      <div className="absolute inset-0" style={{ minWidth: '1200px', minHeight: '600px' }}>
+      <div
+        className="absolute inset-0"
+        style={{ minWidth: '1200px', minHeight: '600px' }}
+      >
         {subjects.map((subject) => {
           const position = getNodePosition(subject);
           return (
@@ -88,16 +91,29 @@ export function Canvas({ subjects, selectedSubject, onSelectSubject }: Props) {
                 onClick={() => onSelectSubject(subject)}
                 disabled={subject.status === 'locked'}
                 className={`w-[150px] p-4 rounded-lg border shadow-sm transition-all duration-200
-                  ${subject.status === 'completed' ? 'bg-green-50 border-green-200' : 
-                    subject.status === 'in-progress' ? 'bg-yellow-50 border-yellow-200' :
-                    subject.status === 'available' ? 'bg-blue-50 border-blue-200' :
-                    'bg-gray-50 border-gray-200 opacity-60'}
-                  ${selectedSubject?.id === subject.id ? 'ring-2 ring-offset-2 ring-blue-500' : ''}
+                  ${
+                    subject.status === 'completed'
+                      ? 'bg-green-50 border-green-200'
+                      : subject.status === 'in-progress'
+                      ? 'bg-yellow-50 border-yellow-200'
+                      : subject.status === 'available'
+                      ? 'bg-blue-50 border-blue-200'
+                      : 'bg-gray-50 border-gray-200 opacity-60'
+                  }
+                  ${
+                    selectedSubject?.id === subject.id
+                      ? 'ring-2 ring-offset-2 ring-blue-500'
+                      : ''
+                  }
                 `}
               >
-                <span className={`block text-sm font-medium ${
-                  subject.status === 'locked' ? 'text-gray-500' : 'text-gray-900'
-                }`}>
+                <span
+                  className={`block text-sm font-medium ${
+                    subject.status === 'locked'
+                      ? 'text-gray-500'
+                      : 'text-gray-900'
+                  }`}
+                >
                   {subject.title}
                 </span>
                 <span className="block text-xs mt-1 text-gray-500">
